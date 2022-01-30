@@ -356,55 +356,55 @@ class PortfolioSeeder extends Seeder
             try {
                 $data = [
                     'name' => 'PHP and Frameworks',
-                    'proficiency' => '80'
+                    'proficiency' => '100'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'JavaScript and Frameworks',
-                    'proficiency' => '80'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Python and Frameworks',
-                    'proficiency' => '80'
+                    'proficiency' => '85'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'NetCore and Frameworks',
-                    'proficiency' => '80'
+                    'proficiency' => '70'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Linux kernel operating systems (Ubuntu, Debian, CentOs) and Windows (W-10, W-Server)',
-                    'proficiency' => '80'
+                    'proficiency' => '100'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'SQL, MySQL and NoSQL',
-                    'proficiency' => '80'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Embedded Software',
-                    'proficiency' => '80'
+                    'proficiency' => '75'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Design & Hardware Prototyping',
-                    'proficiency' => '80'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Platform IoT and Indutry 4.0',
-                    'proficiency' => '80'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
             } catch (\Throwable $th) {
@@ -469,7 +469,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'IoT-Hotspot',
                     'categories' => ['personal'],
                     'link' => 'https://hotspot.fjlic.com',
-                    'details' => 'IoT-Hotspot is a simple platform that applies Internet of Things (IoT) technology, strengthening it with a bit of statistics and an algorithm for machine learning (AI) focused on failure prediction and telemetry analysis of the devices. data collected by the devices, using prototype cards called, with these it was possible to give novel solutions to machines that required to communicate their current and operational status through the use of adaptable hardware, allowing their machines to send data To the cloud, our intention is to allow these alternative solutions to be replicated in other possible projects of a similar nature and thus contribute to the world by interconnecting electronic devices to the cloud.',
+                    'details' => 'IoT-Hotspot is a simple platform that applies Internet of Things (IoT) technology, strengthening it with a bit of statistics and an algorithm for machine learning (AI) focused on failure prediction and telemetry analysis of the devices. Data collected by the devices, using prototype cards, with these it was possible to give novel solutions to machines that required to communicate their current and operational status through the use of adaptable hardware, allowing their machines to send data To the cloud, our intention is to allow these alternative solutions to be replicated in other possible projects of a similar nature and thus contribute to the world by interconnecting electronic devices to the cloud.',
                     'seeder_thumbnail' => 'assets/common/img/projects/demo_project_1_1.png',
                     'seeder_images' => [
                         'assets/common/img/projects/demo_project_1_1.png',
@@ -490,14 +490,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'Documentation IoT-Hotspot',
                     'categories' => ['personal'],
                     'link' => 'https://hotspot.fjlic.com/docs/1.0/overview',
-                    'details' => 'There are companies that require a system 
-                    system that allows them to interconnect their electronic devices to the cloud to give more 
-                    to give more utility to their services, it also contributes in the knowledge to those who are interested in 
-                    implementation, either in the construction of an IoT platform with minimal requirements, or in the case of carrying out a 
-                    IoT platform with minimum requirements, or also in the case of carrying out the implementation for the 
-                    implementation for the design of an IoT oriented modular board prototype. 
-                    Although the information and implementation of the project is not limiting, it can be applied to other 
-                    for this we created a documentation that explains in an intuitive way how to build your own project from scratch.',
+                    'details' => 'There are companies that require a system that allows them to interconnect their electronic devices to the cloud to provide more subtlety to their services, it also provides knowledge to those who are interested in the development and implementation, either in the construction of a Platform IoT with minimum requirements, or also in the case of carrying out the implementation for the design of IoT-oriented modular board prototypes. Although the information and implementation of the project is not limiting, it can be applied to any use, for this we have created a documentation that explains in an intuitive way how to build your own IoT project from scratch.',
                     'seeder_thumbnail' => 'assets/common/img/projects/demo_project_2_1.png',
                     'seeder_images' => [
                         'assets/common/img/projects/demo_project_2_1.png',
@@ -519,8 +512,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'Modular prototype PCB for GPRS, GPS and WiFi',
                     'categories' => ['personal'],
                     'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
-                    'details' => 'To develop the modular prototype design, we used Fritzing, KiCad EDA open source, these softwares allow us to design printed circuits of two or four layers, connect schematic diagrams, routing of printed circuits, it has support for libraries and full content libraries.
-                    with it we integrated an Arduino Nano microcontroller, the ESP32 module and the A9G GPRS module with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to test the telemetry sending.',
+                    'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
                     'seeder_thumbnail' => 'assets/common/img/projects/demo_project_3_1.png',
                     'seeder_images' => [
                         'assets/common/img/projects/demo_project_3_1.png',
@@ -546,21 +538,21 @@ class PortfolioSeeder extends Seeder
                 $data = [
                     'title' => 'Cloud Applications for Statistics and Learning Machines or Artificial Intelligence',
                     'icon' => 'fas fa-sitemap',
-                    'details' => $faker->text()
+                    'details' => 'We understand that availability is important, thats why we acquire spaces in the cloud (VPS) with a strong infrastructure with companies such as Google Cloud, Amazon AWS, Digital Ocean, IONOS 1 and 1.'
                 ];
                 $service->store($data);
 
                 $data = [
                     'title' => 'PCBS Design and Embedded Software',
                     'icon' => 'fas fa-microchip',
-                    'details' => $faker->text()
+                    'details' => 'We understand that the prototypes of electronic cards for embedded systems are sometimes essential to validate projects with Hardware and Software in the best way, for this reason we use PcbWay, JlcPcb and KingPcb as supplier and manufacturer of pcbs to have the best quality and price in your assembled prototype in the shortest possible time.'
                 ];
                 $service->store($data);
 
                 $data = [
                     'title' => 'IoT and Industry 4.0 Integrations',
                     'icon' => 'fas fa-code-branch',
-                    'details' => $faker->text()
+                    'details' => 'Use interfaces to interconnect the prototype cards to the cloud through the use of Api-Rest or Web Sockets applying the Mqtt protocol.'
                 ];
                 $service->store($data);
             } catch (\Throwable $th) {
