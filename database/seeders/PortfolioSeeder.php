@@ -290,7 +290,7 @@ class PortfolioSeeder extends Seeder
                     'avatar' => 'assets/common/img/avatar/default.png',
                     'cover' => 'assets/common/img/cover/default.png',
                     'phone' => '52+ 33 3408 7192',
-                    'address' => '45589, San Pedro Tlaquepaque, Jal.',
+                    'address' => 'San Pedro Tlaquepaque, Jal.',
                     'description' => 'I am a technology enthusiast, I like to integrate technology with all kinds of applications. I am fascinated by creating hardware designs with specialized firmware to interfaces to integrate computing technologies such as: cloud applications, artificial intelligence, machine learning, mixed with the internet of things (IoT) and industry 4.0.',
                     'taglines' => ["I am Software and Hardware Engineer with a focus on Embedded Systems", "I am Technology Integration Engineer", "I am Full Stack Developer"],
                     'social_links' => [
@@ -312,7 +312,7 @@ class PortfolioSeeder extends Seeder
                         [
                             'title' => 'Facebook',
                             'iconClass' => 'fab fa-facebook',
-                            'link' => 'https://www.facebook.com/FJLowIntegratingCost'
+                            'link' => 'https://facebook.com/FJLowIntegratingCost'
                         ],
                         [
                             'title' => 'Mail',
@@ -414,11 +414,11 @@ class PortfolioSeeder extends Seeder
             //experience table seed
             try {
                 $data = [
-                    'company' => 'Galex Games',
+                    'company' => 'Galex Game',
                     'period' => '2019-2021',
                     'position' => 'IT Manager and Technology Integration Engineer ',
                     'details' => 'Management of technological projects derived from the design of hardware and software
-                    applied for the company Diversiones Galex, support, follow up of the same, implementation of
+                    applied for the company, support, follow up of the same, implementation of
                     development phases. '
                 ];
                 $experience->store($data);
