@@ -45,8 +45,8 @@ class PortfolioSeeder extends Seeder
             //template
             $data = [
                 'setting_key' => CoreConstants::PORTFOLIO_CONFIG__TEMPLATE,
-                'setting_value' => 'procyon',
-                'default_value' => 'procyon',
+                'setting_value' => 'rigel',
+                'default_value' => 'rigel',
             ];
             $portfolioConfig->insertOrUpdate($data);
 
@@ -285,14 +285,14 @@ class PortfolioSeeder extends Seeder
                 }
                 
                 $data = [
-                    'name' => 'Francisco Javier',
-                    'email' => 'franc.javier.flores@gmail.com',
+                    'name' => 'FJ Low Integration Codes',
+                    'email' => 'support@fjlic.com',
                     'avatar' => 'assets/common/img/avatar/default.png',
                     'cover' => 'assets/common/img/cover/default.png',
                     'phone' => '52+ 33 3408 7192',
                     'address' => 'San Pedro Tlaquepaque, Jal.',
                     'description' => 'I am a technology enthusiast, I like to integrate technology with all kinds of applications. I am fascinated by creating hardware designs with specialized firmware to interfaces to integrate computing technologies such as: cloud applications, artificial intelligence, machine learning, mixed with the internet of things (IoT) and industry 4.0.',
-                    'taglines' => ["I am Software and Hardware Engineer with a focus on Embedded Systems", "I am Technology Integration Engineer", "I am Full Stack Developer"],
+                    'taglines' => ["I am Software and Hardware Engineer with a focus on Embedded Systems", "I am Technology Integration Engineer", "I am Full Stack Developer", "I am Francisco Flores"],
                     'social_links' => [
                         [
                             'title' => 'LinkedIn',
@@ -312,12 +312,12 @@ class PortfolioSeeder extends Seeder
                         [
                             'title' => 'Facebook',
                             'iconClass' => 'fab fa-facebook',
-                            'link' => 'https://facebook.com/FJLowIntegratingCost'
+                            'link' => 'https://facebook.com/FJLowIntegrationCodes'
                         ],
                         [
                             'title' => 'Mail',
                             'iconClass' => 'far fa-envelope',
-                            'link' => 'mailto:soporte@fjlic.com'
+                            'link' => 'mailto:support@fjlic.com'
                         ],
                     ],
                     'seederCV' => 'assets/common/cv/CV_English.pdf',
