@@ -104,6 +104,7 @@ interface AdminInterface
      * @param boolean $skillData
      * @param boolean $educationData
      * @param boolean $experienceData
+     * @param boolean $publicationData
      * @param boolean $projectData
      * @param boolean $currentTemplate
      * @return array
@@ -120,6 +121,7 @@ interface AdminInterface
         bool $skillData = true,
         bool $educationData = true,
         bool $experienceData = true,
+        bool $publicationData = true,
         bool $projectData = true,
         bool $serviceData = true,
         bool $currentTemplate = true

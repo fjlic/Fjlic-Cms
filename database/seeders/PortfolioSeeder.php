@@ -8,6 +8,7 @@ use App\Services\Contracts\EducationInterface;
 use App\Services\Contracts\ExperienceInterface;
 use App\Services\Contracts\MessageInterface;
 use App\Services\Contracts\PortfolioConfigInterface;
+use App\Services\Contracts\PublicationInterface;
 use App\Services\Contracts\ProjectInterface;
 use App\Services\Contracts\ServiceInterface;
 use App\Services\Contracts\SkillInterface;
@@ -35,6 +36,7 @@ class PortfolioSeeder extends Seeder
             $education = resolve(EducationInterface::class);
             $skill = resolve(SkillInterface::class);
             $experience = resolve(ExperienceInterface::class);
+            $publication = resolve(PublicationInterface::class);
             $project = resolve(ProjectInterface::class);
             $service = resolve(ServiceInterface::class);
             $visitor = resolve(VisitorInterface::class);
@@ -53,8 +55,10 @@ class PortfolioSeeder extends Seeder
             //accent color
             $data = [
                 'setting_key' => CoreConstants::PORTFOLIO_CONFIG__ACCENT_COLOR,
-                'setting_value' => '#1890ff',
-                'default_value' => '#1890ff',
+                'setting_value' => '#144a96',
+                'default_value' => '#144a96',
+                //'setting_value' => '#1890ff',
+                //'default_value' => '#1890ff',
             ];
             $portfolioConfig->insertOrUpdate($data);
 
@@ -98,6 +102,13 @@ class PortfolioSeeder extends Seeder
 
             $data = [
                 'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_EXPERIENCE,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+            
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_PUBLICATION,
                 'setting_value' => CoreConstants::TRUE,
                 'default_value' => CoreConstants::TRUE,
             ];
@@ -440,6 +451,117 @@ class PortfolioSeeder extends Seeder
                     'details' => 'Management for the area of gps installations, monitoring with tracking platform, support with clients.'
                 ];
                 $experience->store($data);
+            } catch (\Throwable $th) {
+                Log::error($th->getMessage());
+            }
+
+            //publication table seed
+            try {
+                try {
+                    //images
+                    if (is_dir('public/assets/common/img/publications')) {
+                        $dir = 'public/assets/common/img/publications';
+                    } else {
+                        $dir = 'assets/common/img/publications';
+                    }
+                    
+                    $leave_files = array('.gitkeep');
+                    
+                    foreach (glob("$dir/*") as $file) {
+                        if (!in_array(basename($file), $leave_files)) {
+                            unlink($file);
+                        }
+                    }
+                } catch (\Throwable $th) {
+                    Log::error($th->getMessage());
+                }
+
+                $data = [
+                    'title' => 'Publication 1',
+                    'categories' => ['article'],
+                    'link' => 'https://hotspot.fjlic.com',
+                    'details' => 'IoT-Hotspot is a simple platform that applies Internet of Things (IoT) technology, strengthening it with a bit of statistics and an algorithm for machine learning (AI) focused on failure prediction and telemetry analysis of the devices. Data collected by the devices, using prototype cards, with these it was possible to give novel solutions to machines that required to communicate their current and operational status through the use of adaptable hardware, allowing their machines to send data To the cloud, our intention is to allow these alternative solutions to be replicated in other possible projects of a similar nature and thus contribute to the world by interconnecting electronic devices to the cloud.',
+                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_1_1.png',
+                    'seeder_images' => [
+                        'assets/common/img/publications/demo_publication_1_1.png',
+                        'assets/common/img/publications/demo_publication_1_2.png'
+                    ]
+                ];
+                if (is_dir('public/assets/common/default/publications')) {
+                    copy('public/assets/common/default/publications/demo_publication_1_1.png', $dir.'/demo_publication_1_1.png');
+                    copy('public/assets/common/default/publications/demo_publication_1_2.png', $dir.'/demo_publication_1_2.png');
+                } else {
+                    copy('assets/common/default/publications/demo_publication_1_1.png', $dir.'/demo_publication_1_1.png');
+                    copy('assets/common/default/publications/demo_publication_1_2.png', $dir.'/demo_publication_1_2.png');
+                }
+                
+                $publication->store($data);
+
+                $data = [
+                    'title' => 'Publication 2',
+                    'categories' => ['article'],
+                    'link' => 'https://hotspot.fjlic.com/docs/1.0/overview',
+                    'details' => 'There are companies that require a system that allows them to interconnect their electronic devices to the cloud to provide more subtlety to their services, it also provides knowledge to those who are interested in the development and implementation, either in the construction of a Platform IoT with minimum requirements, or also in the case of carrying out the implementation for the design of IoT-oriented modular board prototypes. Although the information and implementation of the project is not limiting, it can be applied to any use, for this we have created a documentation that explains in an intuitive way how to build your own IoT project from scratch.',
+                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_2_1.png',
+                    'seeder_images' => [
+                        'assets/common/img/publications/demo_publication_2_1.png',
+                        'assets/common/img/publications/demo_publication_2_2.png'
+                    ]
+                ];
+
+                if (is_dir('public/assets/common/default/publications')) {
+                    copy('public/assets/common/default/publications/demo_publication_2_1.png', $dir.'/demo_publication_2_1.png');
+                    copy('public/assets/common/default/publications/demo_publication_2_2.png', $dir.'/demo_publication_2_2.png');
+                } else {
+                    copy('assets/common/default/publications/demo_publication_2_1.png', $dir.'/demo_publication_2_1.png');
+                    copy('assets/common/default/publications/demo_publication_2_2.png', $dir.'/demo_publication_2_2.png');
+                }
+
+                $publication->store($data);
+
+                $data = [
+                    'title' => 'Publication 3',
+                    'categories' => ['article'],
+                    'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
+                    'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
+                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_3_1.png',
+                    'seeder_images' => [
+                        'assets/common/img/publications/demo_publication_3_1.png',
+                        'assets/common/img/publications/demo_publication_3_2.png'
+                    ]
+                ];
+                
+                if (is_dir('public/assets/common/default/publications')) {
+                    copy('public/assets/common/default/publications/demo_publication_3_1.png', $dir.'/demo_publication_3_1.png');
+                    copy('public/assets/common/default/publications/demo_publication_3_2.png', $dir.'/demo_publication_3_2.png');
+                } else {
+                    copy('assets/common/default/publications/demo_publication_3_1.png', $dir.'/demo_publication_3_1.png');
+                    copy('assets/common/default/publications/demo_publication_3_2.png', $dir.'/demo_publication_3_2.png');
+                }
+                
+                $publication->store($data);
+
+                $data = [
+                    'title' => 'Publication 4',
+                    'categories' => ['article'],
+                    'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
+                    'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
+                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_3_1.png',
+                    'seeder_images' => [
+                        'assets/common/img/publications/demo_publication_4_1.png',
+                        'assets/common/img/publications/demo_publication_4_2.png'
+                    ]
+                ];
+                
+                if (is_dir('public/assets/common/default/publications')) {
+                    copy('public/assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
+                    copy('public/assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
+                } else {
+                    copy('assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
+                    copy('assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
+                }
+                
+                $publication->store($data);
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
             }

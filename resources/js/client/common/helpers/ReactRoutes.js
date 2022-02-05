@@ -1,40 +1,55 @@
-
 import loadable from '@loadable/component';
 import Routes from './Routes';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import React from 'react';
 
-const Login = loadable(() => import('../../admin/components/auth/Login'));
-const Logout = loadable(() => import('../../admin/components/auth/Logout'));
-const ForgetPassword = loadable(() => import('../../admin/components/auth/ForgetPassword'));
-const ResetPassword = loadable(() => import('../../admin/components/auth/ResetPassword'));
-const Dashboard = loadable(() => import('../../admin/components/dashboard/Dashboard'));
-const Settings = loadable(() => import('../../admin/components/settings/Settings'));
-const PortfolioConfig = loadable(() => import('../../admin/components/portfolioConfig/PortfolioConfig'));
-const About = loadable(() => import('../../admin/components/about/About'));
-const EducationList = loadable(() => import('../../admin/components/education/EducationList'));
-const Skills = loadable(() => import('../../admin/components/skill/Skills'));
-const Experiences = loadable(() => import('../../admin/components/experience/Experiences'));
-const Projects = loadable(() => import('../../admin/components/project/Projects'));
-const Services = loadable(() => import('../../admin/components/service/Services'));
-const Visitors = loadable(() => import('../../admin/components/visitor/Visitors'));
-const Messages = loadable(() => import('../../admin/components/message/Messages'));
+const Login = loadable(() =>
+    import ('../../admin/components/auth/Login'));
+const Logout = loadable(() =>
+    import ('../../admin/components/auth/Logout'));
+const ForgetPassword = loadable(() =>
+    import ('../../admin/components/auth/ForgetPassword'));
+const ResetPassword = loadable(() =>
+    import ('../../admin/components/auth/ResetPassword'));
+const Dashboard = loadable(() =>
+    import ('../../admin/components/dashboard/Dashboard'));
+const Settings = loadable(() =>
+    import ('../../admin/components/settings/Settings'));
+const PortfolioConfig = loadable(() =>
+    import ('../../admin/components/portfolioConfig/PortfolioConfig'));
+const About = loadable(() =>
+    import ('../../admin/components/about/About'));
+const EducationList = loadable(() =>
+    import ('../../admin/components/education/EducationList'));
+const Skills = loadable(() =>
+    import ('../../admin/components/skill/Skills'));
+const Experiences = loadable(() =>
+    import ('../../admin/components/experience/Experiences'));
+const Publications = loadable(() =>
+    import ('../../admin/components/publication/Publications'));
+const Projects = loadable(() =>
+    import ('../../admin/components/project/Projects'));
+const Services = loadable(() =>
+    import ('../../admin/components/service/Services'));
+const Visitors = loadable(() =>
+    import ('../../admin/components/visitor/Visitors'));
+const Messages = loadable(() =>
+    import ('../../admin/components/message/Messages'));
 
 const RedirectLogin = () => {
     const apiToken = useSelector(state => state.globalState.apiToken);
-    
-    return (
-        <React.Fragment>
-            <Redirect
-                to={apiToken ? Routes.web.admin.dashboard : Routes.web.admin.login}
-            />
-        </React.Fragment>
+
+    return ( <
+        React.Fragment >
+        <
+        Redirect to = { apiToken ? Routes.web.admin.dashboard : Routes.web.admin.login }
+        /> < /
+        React.Fragment >
     )
 }
 
-const admin = [
-    {
+const admin = [{
         title: 'Login',
         path: Routes.web.admin.login,
         exact: true,
@@ -116,6 +131,13 @@ const admin = [
         path: Routes.web.admin.portfolioExperiences,
         exact: true,
         component: Experiences,
+        private: true
+    },
+    {
+        title: 'portfolioPublications',
+        path: Routes.web.admin.portfolioPublications,
+        exact: true,
+        component: Publications,
         private: true
     },
     {

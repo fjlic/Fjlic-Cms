@@ -29493,13 +29493,13 @@ function getOptions(options) {
 }
 
 function scrollIntoView(target, options) {
-  var targetIsDetached = !target.ownerDocument.documentElement.contains(target);
+  var isTargetAttached = target.isConnected || target.ownerDocument.documentElement.contains(target);
 
   if (isOptionsObject(options) && typeof options.behavior === 'function') {
-    return options.behavior(targetIsDetached ? [] : (0,compute_scroll_into_view__WEBPACK_IMPORTED_MODULE_0__["default"])(target, options));
+    return options.behavior(isTargetAttached ? (0,compute_scroll_into_view__WEBPACK_IMPORTED_MODULE_0__["default"])(target, options) : []);
   }
 
-  if (targetIsDetached) {
+  if (!isTargetAttached) {
     return;
   }
 

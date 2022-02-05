@@ -7771,33 +7771,38 @@ var Visibility = function Visibility(props) {
 
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState14 = _slicedToArray(_useState13, 2),
-      projects = _useState14[0],
-      setProjects = _useState14[1];
+      publications = _useState14[0],
+      setPublications = _useState14[1];
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState16 = _slicedToArray(_useState15, 2),
-      services = _useState16[0],
-      setServices = _useState16[1];
+      projects = _useState16[0],
+      setProjects = _useState16[1];
 
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState18 = _slicedToArray(_useState17, 2),
-      contact = _useState18[0],
-      setContact = _useState18[1];
+      services = _useState18[0],
+      setServices = _useState18[1];
 
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState20 = _slicedToArray(_useState19, 2),
-      footer = _useState20[0],
-      setFooter = _useState20[1];
+      contact = _useState20[0],
+      setContact = _useState20[1];
 
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState22 = _slicedToArray(_useState21, 2),
-      cv = _useState22[0],
-      setCv = _useState22[1];
+      footer = _useState22[0],
+      setFooter = _useState22[1];
 
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState24 = _slicedToArray(_useState23, 2),
-      skillProficiency = _useState24[0],
-      setSkillProficiency = _useState24[1];
+      cv = _useState24[0],
+      setCv = _useState24[1];
+
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState26 = _slicedToArray(_useState25, 2),
+      skillProficiency = _useState26[0],
+      setSkillProficiency = _useState26[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     props.mountedCallBack();
@@ -7808,6 +7813,7 @@ var Visibility = function Visibility(props) {
       setSkills(parseInt(props.config.visibility.skills));
       setEducation(parseInt(props.config.visibility.education));
       setExperiences(parseInt(props.config.visibility.experiences));
+      setPublications(parseInt(props.config.visibility.publications));
       setProjects(parseInt(props.config.visibility.projects));
       setServices(parseInt(props.config.visibility.services));
       setContact(parseInt(props.config.visibility.contact));
@@ -7937,6 +7943,29 @@ var Visibility = function Visibility(props) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Item.Meta, {
               title: 'Experiences',
               description: 'Display experiences section.'
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          delay: 500,
+          size: "small",
+          spinning: loading && currentSettingToChange === _common_helpers_CoreConstants__WEBPACK_IMPORTED_MODULE_4__["default"].portfolioConfig.VISIBILITY_PUBLICATION,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledListItem, {
+            actions: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              loading: loading && currentSettingToChange === _common_helpers_CoreConstants__WEBPACK_IMPORTED_MODULE_4__["default"].portfolioConfig.VISIBILITY_PUBLICATION,
+              checkedChildren: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_11__["default"], {}),
+              unCheckedChildren: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_12__["default"], {}),
+              checked: publications,
+              onChange: function onChange(checked) {
+                var callback = function callback() {
+                  setPublications(checked);
+                };
+
+                submitData(_common_helpers_CoreConstants__WEBPACK_IMPORTED_MODULE_4__["default"].portfolioConfig.VISIBILITY_PUBLICATION, checked, callback);
+              }
+            }, 'publications')],
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Item.Meta, {
+              title: 'Publications',
+              description: 'Display publications section.'
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -43325,13 +43354,13 @@ function getOptions(options) {
 }
 
 function scrollIntoView(target, options) {
-  var targetIsDetached = !target.ownerDocument.documentElement.contains(target);
+  var isTargetAttached = target.isConnected || target.ownerDocument.documentElement.contains(target);
 
   if (isOptionsObject(options) && typeof options.behavior === 'function') {
-    return options.behavior(targetIsDetached ? [] : (0,compute_scroll_into_view__WEBPACK_IMPORTED_MODULE_0__["default"])(target, options));
+    return options.behavior(isTargetAttached ? (0,compute_scroll_into_view__WEBPACK_IMPORTED_MODULE_0__["default"])(target, options) : []);
   }
 
-  if (targetIsDetached) {
+  if (!isTargetAttached) {
     return;
   }
 

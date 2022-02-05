@@ -93,6 +93,9 @@
                     @if ($portfolioConfig['visibility']['services'])
                         <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
                     @endif
+                    @if ($portfolioConfig['visibility']['publications'])
+                        <li class="nav-item"><a href="#publications-section" class="nav-link"><span>Publications</span></a></li>
+                    @endif
                     @if ($portfolioConfig['visibility']['projects'])
                         <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
                     @endif
@@ -348,6 +351,24 @@
                     @endforeach
                 @endif
             </div>
+        </div>
+    </section>
+    @endif
+
+    @if ($portfolioConfig['visibility']['publications'])
+    <section class="ftco-section ftco-publication" id="publications-section">
+        <div class="container-fluid px-md-0">
+            <div class="row no-gutters justify-content-center pb-5">
+                <div class="col-md-12 heading-section text-center">
+                    <h2 class="mb-4">Publications</h2>
+                </div>
+            </div>
+            <div 
+                id="react-publication-root" 
+                data-accentcolor="{{$accentColor}}" 
+                data-demomode="{{$demoMode}}"
+            />
+            <div class="mb-5"></div>
         </div>
     </section>
     @endif

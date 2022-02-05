@@ -213,6 +213,13 @@ class PortfolioConfigService implements PortfolioConfigInterface
                     $data['visibility']['experiences'] = CoreConstants::TRUE;
                 }
 
+                $result = $this->getConfigByKey(CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_PUBLICATION, ['setting_value']);
+                if ($result['status'] === CoreConstants::STATUS_CODE_SUCCESS) {
+                    $data['visibility']['publications'] = $result['payload']->setting_value;
+                } else {
+                    $data['visibility']['publications'] = CoreConstants::TRUE;
+                }
+
                 $result = $this->getConfigByKey(CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_PROJECT, ['setting_value']);
                 if ($result['status'] === CoreConstants::STATUS_CODE_SUCCESS) {
                     $data['visibility']['projects'] = $result['payload']->setting_value;

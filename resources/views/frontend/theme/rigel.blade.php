@@ -93,6 +93,9 @@
                 @if ($portfolioConfig['visibility']['education'])
                 <li><a href="#education"><i class='bx bx-book' ></i> <span>Education</span></a></li>
                 @endif
+                @if ($portfolioConfig['visibility']['publications'])
+                <li><a href="#publications"><i class='bx bxs-package'></i> <span>Publications</span></a></li>
+                @endif
                 @if ($portfolioConfig['visibility']['projects'])
                 <li><a href="#projects"><i class='bx bxs-package'></i> <span>Projects</span></a></li>
                 @endif
@@ -244,6 +247,25 @@
                 </div>
             </div>
         </section><!-- End Education Section -->
+        @endif
+
+        @if ($portfolioConfig['visibility']['publications'])
+        <!-- ======= Publications Section ======= -->
+        <section id="publications" class="resume">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Publications</h2>
+                </div>
+                <div>
+                    <div 
+                        id="react-publication-root" 
+                        data-accentcolor="{{$accentColor}}" 
+                        data-demomode="{{$demoMode}}"
+                    />
+                    <div class="mb-5"></div>
+                </div>
+            </div>
+        </section><!-- End Publications Section -->
         @endif
 
         @if ($portfolioConfig['visibility']['projects'])

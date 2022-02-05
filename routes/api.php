@@ -68,6 +68,12 @@ Route::group(['prefix' => 'v1'], function () {
             Route::get('/experiences/{id}', ['App\Http\Controllers\Admin\Api\ExperienceController', 'show']);
             Route::put('/experiences/{id}', ['App\Http\Controllers\Admin\Api\ExperienceController', 'update']);
             Route::delete('/experiences', ['App\Http\Controllers\Admin\Api\ExperienceController', 'destroy']);
+            
+            Route::get('/publications', ['App\Http\Controllers\Admin\Api\PublicationController', 'index']);
+            Route::post('/publications', ['App\Http\Controllers\Admin\Api\PublicationController', 'store']);
+            Route::get('/publications/{id}', ['App\Http\Controllers\Admin\Api\PublicationController', 'show']);
+            Route::put('/publications/{id}', ['App\Http\Controllers\Admin\Api\PublicationController', 'update']);
+            Route::delete('/publications', ['App\Http\Controllers\Admin\Api\PublicationController', 'destroy']);
 
             Route::get('/projects', ['App\Http\Controllers\Admin\Api\ProjectController', 'index']);
             Route::post('/projects', ['App\Http\Controllers\Admin\Api\ProjectController', 'store']);

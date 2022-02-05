@@ -9,6 +9,7 @@ use App\Models\AdminPasswordResets;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Message;
+use App\Models\Publication;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
@@ -632,6 +633,7 @@ class AdminService implements AdminInterface
      * @param boolean $skillData
      * @param boolean $educationData
      * @param boolean $experienceData
+     * @param boolean $publicationData
      * @param boolean $projectData
      * @param boolean $currentTemplate
      * @return array
@@ -648,6 +650,7 @@ class AdminService implements AdminInterface
         bool $skillData = true,
         bool $educationData = true,
         bool $experienceData = true,
+        bool $publicationData = true,
         bool $projectData = true,
         bool $serviceData = true,
         bool $currentTemplate = true
@@ -764,6 +767,12 @@ class AdminService implements AdminInterface
                 $experienceModel = resolve(Experience::class);
 
                 $data['experiences']['total'] = $experienceModel->count();
+            }
+            
+            if ($publicationData) {
+                $publicationModel = resolve(Publication::class);
+
+                $data['publications']['total'] = $publicationModel->count();
             }
 
             if ($projectData) {

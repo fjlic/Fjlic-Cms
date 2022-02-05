@@ -21,6 +21,7 @@ const Visibility = (props) => {
     const [skills, setSkills] = useState(false);
     const [education, setEducation] = useState(false);
     const [experiences, setExperiences] = useState(false);
+    const [publications, setPublications] = useState(false);
     const [projects, setProjects] = useState(false);
     const [services, setServices] = useState(false);
     const [contact, setContact] = useState(false);
@@ -38,6 +39,7 @@ const Visibility = (props) => {
             setSkills(parseInt(props.config.visibility.skills));
             setEducation(parseInt(props.config.visibility.education));
             setExperiences(parseInt(props.config.visibility.experiences));
+            setPublications(parseInt(props.config.visibility.publications));
             setProjects(parseInt(props.config.visibility.projects));
             setServices(parseInt(props.config.visibility.services));
             setContact(parseInt(props.config.visibility.contact));
@@ -156,6 +158,25 @@ const Visibility = (props) => {
                             />
                         ]}>
                             <Item.Meta title={'Experiences'} description={'Display experiences section.'}/>
+                        </StyledListItem>
+                    </Spin>
+                    <Spin delay={500} size="small" spinning={loading && currentSettingToChange === CoreConstants.portfolioConfig.VISIBILITY_PUBLICATION}>
+                        <StyledListItem actions={[
+                            <Switch
+                                key={'publications'}
+                                loading={loading && currentSettingToChange === CoreConstants.portfolioConfig.VISIBILITY_PUBLICATION}
+                                checkedChildren={<CheckOutlined />}
+                                unCheckedChildren={<CloseOutlined />}
+                                checked={publications}
+                                onChange={(checked) => {
+                                    const callback = () => {
+                                        setPublications(checked);
+                                    }
+                                    submitData(CoreConstants.portfolioConfig.VISIBILITY_PUBLICATION, checked, callback);
+                                }}
+                            />
+                        ]}>
+                            <Item.Meta title={'Publications'} description={'Display publications section.'}/>
                         </StyledListItem>
                     </Spin>
                     <Spin delay={500} size="small" spinning={loading && currentSettingToChange === CoreConstants.portfolioConfig.VISIBILITY_PROJECT}>

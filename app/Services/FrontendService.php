@@ -7,6 +7,7 @@ use App\Services\Contracts\EducationInterface;
 use App\Services\Contracts\ExperienceInterface;
 use App\Services\Contracts\FrontendInterface;
 use App\Services\Contracts\PortfolioConfigInterface;
+use App\Services\Contracts\PublicationInterface;
 use App\Services\Contracts\ProjectInterface;
 use App\Services\Contracts\ServiceInterface;
 use App\Services\Contracts\SkillInterface;
@@ -64,6 +65,12 @@ class FrontendService implements FrontendInterface
             $result = resolve(ExperienceInterface::class)->getAll();
             if ($result['status'] === CoreConstants::STATUS_CODE_SUCCESS) {
                 $data['experiences'] = $result['payload'];
+            }
+
+            //publiations
+            $result = resolve(PublicationInterface::class)->getAll();
+            if ($result['status'] === CoreConstants::STATUS_CODE_SUCCESS) {
+                $data['publications'] = $result['payload'];
             }
 
             //projects

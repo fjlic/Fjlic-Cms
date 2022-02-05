@@ -100,6 +100,9 @@
                 @if ($portfolioConfig['visibility']['skills'])
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                 @endif
+                @if ($portfolioConfig['visibility']['publications'])
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publications">Publications</a></li>
+                @endif
                 @if ($portfolioConfig['visibility']['projects'])
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                 @endif
@@ -228,6 +231,21 @@
                 </div>
             </section>
             <hr class="m-0" />
+        @endif
+        @if ($portfolioConfig['visibility']['publications'])
+            <!-- publications-->
+            <section class="resume-section" id="publications">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Publications</h2>
+                    <div 
+                        id="react-publication-root" 
+                        data-accentcolor="{{$accentColor}}" 
+                        data-demomode="{{$demoMode}}"
+                    />
+                    <div class="mb-5"></div>
+                    <hr class="m-0" />
+                </div>
+            </section>
         @endif
         @if ($portfolioConfig['visibility']['projects'])
             <!-- projects-->
