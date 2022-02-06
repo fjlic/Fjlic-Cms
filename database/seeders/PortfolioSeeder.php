@@ -477,10 +477,13 @@ class PortfolioSeeder extends Seeder
                 }
 
                 $data = [
-                    'title' => 'Publication 1',
+                    'title' => 'Academia Journals',
                     'categories' => ['article'],
-                    'link' => 'https://hotspot.fjlic.com',
-                    'details' => 'IoT-Hotspot is a simple platform that applies Internet of Things (IoT) technology, strengthening it with a bit of statistics and an algorithm for machine learning (AI) focused on failure prediction and telemetry analysis of the devices. Data collected by the devices, using prototype cards, with these it was possible to give novel solutions to machines that required to communicate their current and operational status through the use of adaptable hardware, allowing their machines to send data To the cloud, our intention is to allow these alternative solutions to be replicated in other possible projects of a similar nature and thus contribute to the world by interconnecting electronic devices to the cloud.',
+                    'link' => 'https://ciateq.repositorioinstitucional.mx/jspui/handle/1020/543',
+                    'details' => 'Title: Internet of Things (IoT) applications, approaches and trends: systematic literature review.  
+                                  Published: 22 oct. 2021.  
+                                  Resume: This article presents a systematic review of the literature to know the current state of the IoT, although it does not intend to cover all existing IoT topics at present, but tries to respond based on the published works and through the review of them, to obtain an understanding of the use of IoT descriptively through the following points to investigate: the applications that are developed, the approaches that are taken and what are the proposals put forward by experts on the subject without neglecting the current trends in the use of IoT in society, industry, and business.  
+                                  Keywords: IoT, Industry 4.0, Artificial intelligence, Trends.',
                     'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_1_1.png',
                     'seeder_images' => [
                         'assets/common/img/publications/demo_publication_1_1.png',
@@ -498,10 +501,13 @@ class PortfolioSeeder extends Seeder
                 $publication->store($data);
 
                 $data = [
-                    'title' => 'Publication 2',
+                    'title' => 'Micai',
                     'categories' => ['article'],
-                    'link' => 'https://hotspot.fjlic.com/docs/1.0/overview',
-                    'details' => 'There are companies that require a system that allows them to interconnect their electronic devices to the cloud to provide more subtlety to their services, it also provides knowledge to those who are interested in the development and implementation, either in the construction of a Platform IoT with minimum requirements, or also in the case of carrying out the implementation for the design of IoT-oriented modular board prototypes. Although the information and implementation of the project is not limiting, it can be applied to any use, for this we have created a documentation that explains in an intuitive way how to build your own IoT project from scratch.',
+                    'link' => 'In Process',
+                    'details' => 'Title: Implementation of Interface for Device and Smart IoT Platform Integration.  
+                                  Published: 27 oct. 2021.  
+                                  Resume: The implementation described in this document aims to show the parts that make up the construction of an intelligent IoT system. The system is adaptable to a number of technological applications that require sending information to the cloud.  
+                                  Keywords: IoT, Intelligent System, Intelligent Device, API, Telemetry.',
                     'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_2_1.png',
                     'seeder_images' => [
                         'assets/common/img/publications/demo_publication_2_1.png',
@@ -520,10 +526,13 @@ class PortfolioSeeder extends Seeder
                 $publication->store($data);
 
                 $data = [
-                    'title' => 'Publication 3',
+                    'title' => 'Ciniai',
                     'categories' => ['article'],
-                    'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
-                    'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
+                    'link' => 'In Process',
+                    'details' => 'Title: Intelligent IoT Platform to Predict Failures in the Reception of Equipment Te-lemetry Requests.  
+                                  Published: 26 nov. 2021.  
+                                  Resume: This paper presents an implementation of an IoT platform that shows the telemetry of equipment through temperature sensors, magnetic sensors, actuators and voltage detection, which allows the application of statistical and linear regression formulas to analyze the behavior and prediction in the reception of information from the elec-tronic device to the IoT platform.  
+                                  Keywords: IoT, Sensors, Telemetry, Linear regression, Predictive maintenance.',
                     'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_3_1.png',
                     'seeder_images' => [
                         'assets/common/img/publications/demo_publication_3_1.png',
@@ -537,6 +546,31 @@ class PortfolioSeeder extends Seeder
                 } else {
                     copy('assets/common/default/publications/demo_publication_3_1.png', $dir.'/demo_publication_3_1.png');
                     copy('assets/common/default/publications/demo_publication_3_2.png', $dir.'/demo_publication_3_2.png');
+                }
+                
+                $publication->store($data);
+
+                $data = [
+                    'title' => 'CIATEQ, A.C.',
+                    'categories' => ['thesis'],
+                    'link' => 'https://ciateq.repositorioinstitucional.mx/jspui/handle/1020/569',
+                    'details' => 'Title: Improvement proposal to develop an application model for IoT services in entertainment machines.  
+                                  Published: 27 dec. 2021.  
+                                  Resume: The purpose of the document is to describe the structure for the development of the detailed design of the IoT platform, the document shows the division of the IoT solution into individual software modules to show in a simple way the design of the solution. The purpose of the study is to test the effectiveness in sending information from an electronic device to an IoT system in the cloud, this requires a prototype of a modular type card, which will be integrated into the platform and thus send the telemetry collected from the video game machine.  
+                                  Keywords: Internet of things(IoT), API, Data transmission devices.',
+                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_4_1.png',
+                    'seeder_images' => [
+                        'assets/common/img/publications/demo_publication_4_1.png',
+                        'assets/common/img/publications/demo_publication_4_2.png'
+                    ]
+                ];
+                
+                if (is_dir('public/assets/common/default/publications')) {
+                    copy('public/assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
+                    copy('public/assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
+                } else {
+                    copy('assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
+                    copy('assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
                 }
                 
                 $publication->store($data);
