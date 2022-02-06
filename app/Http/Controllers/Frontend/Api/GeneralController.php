@@ -28,6 +28,18 @@ class GeneralController extends Controller
     }
 
     /**
+     * Get all publications
+     *
+     * @return JsonResponse
+     */
+    public function getPublications()
+    {
+        $result = $this->frontend->getAllPublications();
+
+        return response()->json($result, !empty($result['status']) ? $result['status'] : CoreConstants::STATUS_CODE_SUCCESS);
+    }
+
+    /**
      * Get all projects
      *
      * @return JsonResponse

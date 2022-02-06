@@ -493,6 +493,7 @@
     <script src="{{ asset('assets/common/lib/scrollax/scrollax.min.js') }}"></script>
     <script src="{{ asset('assets/common/lib/jquery.lazy/jquery.lazy.min.js') }}"></script>
     <script src="{{ asset('assets/themes/procyon/js/main.js') }}"></script>
+    <script src="{{ asset('js/client/frontend/roots/publications.js') }}"></script>
     <script src="{{ asset('js/client/frontend/roots/projects.js') }}"></script>
     <script>
         $(function() {

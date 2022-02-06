@@ -250,7 +250,7 @@ const Publication = (props) => {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please select publcation category'
+                                message: 'Please select publication category'
                             },
                         ]}
                     >

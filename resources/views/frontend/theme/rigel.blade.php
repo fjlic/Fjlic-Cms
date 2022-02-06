@@ -94,7 +94,7 @@
                 <li><a href="#education"><i class='bx bx-book' ></i> <span>Education</span></a></li>
                 @endif
                 @if ($portfolioConfig['visibility']['publications'])
-                <li><a href="#publications"><i class='bx bxs-package'></i> <span>Publications</span></a></li>
+                <li><a href="#publications"><i class='bx bxs-award'></i> <span>Publications</span></a></li>
                 @endif
                 @if ($portfolioConfig['visibility']['projects'])
                 <li><a href="#projects"><i class='bx bxs-package'></i> <span>Projects</span></a></li>
@@ -438,7 +438,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/themes/rigel/js/main.js') }}"></script>
-
+    <script src="{{ asset('js/client/frontend/roots/publications.js') }}"></script>
     <script src="{{ asset('js/client/frontend/roots/projects.js') }}"></script>
     <script>
         $(function() {

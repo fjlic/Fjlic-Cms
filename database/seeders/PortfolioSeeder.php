@@ -540,28 +540,6 @@ class PortfolioSeeder extends Seeder
                 }
                 
                 $publication->store($data);
-
-                $data = [
-                    'title' => 'Publication 4',
-                    'categories' => ['article'],
-                    'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
-                    'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
-                    'seeder_thumbnail' => 'assets/common/img/publications/demo_publication_3_1.png',
-                    'seeder_images' => [
-                        'assets/common/img/publications/demo_publication_4_1.png',
-                        'assets/common/img/publications/demo_publication_4_2.png'
-                    ]
-                ];
-                
-                if (is_dir('public/assets/common/default/publications')) {
-                    copy('public/assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
-                    copy('public/assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
-                } else {
-                    copy('assets/common/default/publications/demo_publication_4_1.png', $dir.'/demo_publication_4_1.png');
-                    copy('assets/common/default/publications/demo_publication_4_2.png', $dir.'/demo_publication_4_2.png');
-                }
-                
-                $publication->store($data);
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
             }

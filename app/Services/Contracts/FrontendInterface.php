@@ -10,6 +10,13 @@ interface FrontendInterface
      * @return array
      */
     public function getAllData();
+    
+    /**
+     * Get all publications
+     *
+     * @return array
+     */
+    public function getAllPublications();
 
     /**
      * Get all projects

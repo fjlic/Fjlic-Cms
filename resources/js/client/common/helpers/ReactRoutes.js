@@ -40,12 +40,8 @@ const Messages = loadable(() =>
 const RedirectLogin = () => {
     const apiToken = useSelector(state => state.globalState.apiToken);
 
-    return ( <
-        React.Fragment >
-        <
-        Redirect to = { apiToken ? Routes.web.admin.dashboard : Routes.web.admin.login }
-        /> < /
-        React.Fragment >
+    return ( < React.Fragment > < Redirect to = { apiToken ? Routes.web.admin.dashboard : Routes.web.admin.login }
+        /> </React.Fragment >
     )
 }
 

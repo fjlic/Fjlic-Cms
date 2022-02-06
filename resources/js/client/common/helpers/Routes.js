@@ -57,6 +57,7 @@ const api = {
         stats: Utils.backend + '/api/' + Utils.apiVersion + '/admin/stats',
     },
     frontend: {
+        publications: Utils.backend + '/api/' + Utils.apiVersion + '/frontend/publications',
         projects: Utils.backend + '/api/' + Utils.apiVersion + '/frontend/projects',
     },
 };

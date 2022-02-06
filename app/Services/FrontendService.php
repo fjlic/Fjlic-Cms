@@ -101,6 +101,35 @@ class FrontendService implements FrontendInterface
     }
 
     /**
+     * Get all publications
+     *
+     * @return array
+     */
+    public function getAllPublications()
+    {
+        try {
+            $result = resolve(PublicationInterface::class)->getAll();
+
+            if ($result['status'] === CoreConstants::STATUS_CODE_SUCCESS) {
+                return [
+                    'message' => 'Publications are fetched successfully',
+                    'payload' => $result['payload'],
+                    'status' => CoreConstants::STATUS_CODE_SUCCESS
+                ];
+            } else {
+                return $result;
+            }
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+            return [
+                'message' => 'Something went wrong',
+                'payload' => $th->getMessage(),
+                'status'  => CoreConstants::STATUS_CODE_ERROR
+            ];
+        }
+    }
+
+    /**
      * Get all projects
      *
      * @return array

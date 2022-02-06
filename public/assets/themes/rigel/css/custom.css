@@ -61,6 +61,11 @@
     margin-bottom: 20px;
 }
 
+.frontend-publications-wrapper .img-raised, .skill-card, .service-card { 
+    -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.11);
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.11);
+}
+
 .frontend-projects-wrapper .img-raised, .skill-card, .service-card { 
     -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.11);
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.11);
