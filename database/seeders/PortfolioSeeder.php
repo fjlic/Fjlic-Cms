@@ -643,7 +643,7 @@ class PortfolioSeeder extends Seeder
                 $project->store($data);
 
                 $data = [
-                    'title' => 'Modular prototype PCB for GPRS, GPS and WiFi',
+                    'title' => 'Modular Prototype PCB for GPRS, GPS and WiFi',
                     'categories' => ['personal'],
                     'link' => 'https://hotspot.fjlic.com/docs/1.0/firmware-erb',
                     'details' => 'To develop the design of the modular prototype we prefer to use Fritzing, KiCad EDA open source, these softwares allow us to design two or four layer printed circuits, connect schematic diagrams, routing of printed circuits, it has support for full content libraries. with it we integrated modules with microcontrollers such as: Arduino Nano, ESP32 and A9G GPRS with GPS + SD Card that allowed us to send telemetry to the IoT platform, this was a two-layer design to validate the sending of telemetry.',
