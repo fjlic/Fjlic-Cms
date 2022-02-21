@@ -1,5 +1,6 @@
 # Fjlic-Cms 🚀
-FJLIC CMS 
+
+Why we love open source code FJLIC-Projects (FJLIC CMS) 
 
 ## Contributing 👾
 
@@ -11,7 +12,7 @@ User: [demo@fjlic.com](https://fjlic.com/admin)
 
 Password: [demo@54321](https://fjlic.com/admin)
 
-## Send me e-mail for better this project CMS 📧
+## Send me mail for better this project CMS 📧
 
 If you have suggestion to improve the construction of the project, all comments are welcome, please send an email to Francisco Flores. All suggestions for the code will be taken into account via [support@fjlic.com](mailto:support@fjlic.com).
 
