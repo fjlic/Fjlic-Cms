@@ -3,7 +3,7 @@ FJLIC CMS
 
 ## Contributing 👾
 
-You can visit the project from Fjlic-Cms [Fjlic-Cms](https://fjlic.com/).
+You can visit the project from [Fjlic-Cms](https://fjlic.com/).
  
 Take a look at the platform with::
 
