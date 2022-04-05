@@ -11,6 +11,7 @@
         "php": "^7.3|^8.0",
         "barryvdh/laravel-ide-helper": "^2.9",
         "binarytorch/larecipe": "^2.5",
+        "binarytorch/larecipe-dark-theme": "^0.1.5",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
