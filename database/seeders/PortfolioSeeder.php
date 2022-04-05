@@ -330,6 +330,11 @@ class PortfolioSeeder extends Seeder
                             'iconClass' => 'far fa-envelope',
                             'link' => 'mailto:support@fjlic.com'
                         ],
+                        [
+                            'title' => 'Documentation',
+                            'iconClass' => 'fab fa-codepen',
+                            'link' => 'https://fjlic.com/docs/1.0/overview'
+                        ],
                     ],
                     'seederCV' => 'assets/common/cv/CV_English.pdf',
                 ];
