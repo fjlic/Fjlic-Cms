@@ -306,6 +306,11 @@ class PortfolioSeeder extends Seeder
                     'taglines' => ["I am Software and Hardware Engineer with a focus on Embedded Systems", "I am Technology Integration Engineer", "I am Full Stack Developer", "I am Francisco Flores"],
                     'social_links' => [
                         [
+                            'title' => 'Documentation',
+                            'iconClass' => 'fab fa-codepen',
+                            'link' => 'https://fjlic.com/docs/1.0/overview'
+                        ],
+                        [
                             'title' => 'LinkedIn',
                             'iconClass' => 'fab fa-linkedin-in',
                             'link' => 'https://linkedin.com/in/francisco-javier-flores-zermeño'
@@ -313,7 +318,7 @@ class PortfolioSeeder extends Seeder
                         [
                             'title' => 'Github',
                             'iconClass' => 'fab fa-github',
-                            'link' => 'https://github.com/fjlic'
+                            'link' => 'https://github.com/fjlic/Fjlic-Cms'
                         ],
                         [
                             'title' => 'Twitter',
@@ -329,11 +334,6 @@ class PortfolioSeeder extends Seeder
                             'title' => 'Mail',
                             'iconClass' => 'far fa-envelope',
                             'link' => 'mailto:support@fjlic.com'
-                        ],
-                        [
-                            'title' => 'Documentation',
-                            'iconClass' => 'fab fa-codepen',
-                            'link' => 'https://fjlic.com/docs/1.0/overview'
                         ],
                     ],
                     'seederCV' => 'assets/common/cv/CV_English.pdf',
