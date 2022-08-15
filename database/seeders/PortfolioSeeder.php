@@ -363,11 +363,11 @@ class PortfolioSeeder extends Seeder
                     $education->store($data);
 
                     $data = [
-                        'institution' => 'National Institute of Astrophysics, Optics and Electronics National',
+                        'institution' => 'National Institute of Astrophysics, Optics and Electronics National INAOE',
                         'period' => '2022-2022',
-                        'degree' => 'Computer Science Engineering',
+                        'degree' => 'Pre-Silicon Verification and Validation',
                         'cgpa' => '400 hour course',
-                        'department' => 'Computer Science & Engineering',
+                        'department' => 'Pre-Silicon Verification and Validation',
                         'thesis' => 'Specialized Talent Development Program: Pre-silicon Verification Course'
                     ];
                     $education->store($data);
