@@ -405,7 +405,7 @@ class PortfolioSeeder extends Seeder
                 $skill->store($data);
 
                 $data = [
-                    'name' => 'Linux kernel operating systems (Ubuntu, Debian, CentOs) and Windows (W-10, W-Server)',
+                    'name' => 'Linux and Windows',
                     'proficiency' => '90'
                 ];
                 $skill->store($data);
