@@ -361,6 +361,16 @@ class PortfolioSeeder extends Seeder
                         'thesis' => 'General Examination for the Graduate of the Degree (EGEL)->(CENEVAL)'
                     ];
                     $education->store($data);
+
+                    $data = [
+                        'institution' => 'National Institute of Astrophysics, Optics and Electronics National',
+                        'period' => '2022-2022',
+                        'degree' => 'Computer Science Engineering',
+                        'cgpa' => '400 hour course',
+                        'department' => 'Computer Science & Engineering',
+                        'thesis' => 'Specialized Talent Development Program: Pre-silicon Verification Course'
+                    ];
+                    $education->store($data);
                 } catch (\Throwable $th) {
                     Log::error($th->getMessage());
                 }
@@ -372,13 +382,13 @@ class PortfolioSeeder extends Seeder
             try {
                 $data = [
                     'name' => 'PHP and Frameworks',
-                    'proficiency' => '100'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'JavaScript and Frameworks',
-                    'proficiency' => '90'
+                    'proficiency' => '80'
                 ];
                 $skill->store($data);
 
@@ -396,7 +406,7 @@ class PortfolioSeeder extends Seeder
 
                 $data = [
                     'name' => 'Linux kernel operating systems (Ubuntu, Debian, CentOs) and Windows (W-10, W-Server)',
-                    'proficiency' => '100'
+                    'proficiency' => '90'
                 ];
                 $skill->store($data);
 
@@ -408,19 +418,23 @@ class PortfolioSeeder extends Seeder
 
                 $data = [
                     'name' => 'Embedded Software',
+                    'proficiency' => '85'
+                ];
+                $data = [
+                    'name' => 'Modeling, Simulation, and Implementation on FPGAs',
                     'proficiency' => '75'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Design & Hardware Prototyping',
-                    'proficiency' => '90'
+                    'proficiency' => '80'
                 ];
                 $skill->store($data);
 
                 $data = [
                     'name' => 'Platform IoT and Indutry 4.0',
-                    'proficiency' => '90'
+                    'proficiency' => '80'
                 ];
                 $skill->store($data);
             } catch (\Throwable $th) {
